@@ -31,7 +31,7 @@ Como um usuário da biblioteca, quero poder renovar um livro emprestado, para qu
 4. O sistema deve exibir uma mensagem de confirmação para o membro, informando que a renovação foi realizada com sucesso. 
 
 
-Como um bibliotecário, quero poder gerar um relatório de membros com livros em atraso. 
+Como um bibliotecário, quero poder gerar um relatório de membros com livros em atraso, para que eu possa ter ciencia das devoluções pendentes. 
 1. O sistema deve permitir que o bibliotecário gere um relatório de membros que possuem livros em atraso. 
 2. O relatório deve incluir informações sobre o membro, como nome, ID e os títulos dos livros em atraso. 
 3. O sistema deve definir um limite de dias após a data de devolução para considerar um livro como atrasado. 
