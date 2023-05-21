@@ -43,3 +43,87 @@ Como usuário do sistema, eu quero poder realizar o empréstimo de um livro, par
 2. O sistema deve registrar a data de empréstimo e a disponibilidade do livro para “Indisponível”. 
 3. O sistema deve verificar se o usuário não possui livros emprestados além do limite. 
 4. O sistema deve verificar as informações do usuário. 
+
+______________________________________________________________________________________
+CARTÕES CRC
+
+Classe: Livro
+
+Responsabilidades:
+- Conhece informações sobre o livro, como título, gênero, autor. 
+- Conhece número de cópias do livro e disponibilidade.
+- Realiza verificação da disponibilidade do livro.
+- Armazena informações específicas de cada livro, como algum possível defeito, rasura e código de cada título. 
+- Armazena endereço exato onde o livro está posicionado na biblioteca.
+
+Colaboradores: 
+- Emprestimo
+- CatalogoLivros
+- Administrador
+
+Classe: Usuario
+
+Responsabilidades:
+- Conhece informações do usuário da biblioteca, como nome, curso, ID estudantil.  
+- Mapeia os títulos que estão em posse do usuário. 
+- Verifica dias de atraso que o usuário possui.
+- Armazena valor da multa por livro atrasado. 
+- Solicita empréstimos de livros disponíveis.
+- Verifica histórico de empréstimos.
+
+Colaboradores:
+- Livro
+- Emprestimo
+
+Classe: Administrador
+
+Responsabilidades:
+- Conhece os dados do administrador que fará a modificação. 
+- Faz a manutenção dos títulos da biblioteca no sistema.
+- Adiciona na especificação do livro possíveis danos e/ou acontecimentos necessários para o conhecimento do próximo usuário. 
+- Realiza a efetivação do empréstimo de cada usuário.
+- Entra em contato com o usuário por outros plataformas caso a devolução não ocorra. 
+
+Colaboradores:
+- Usuario
+- Livro
+- Emprestimo
+
+Classe: Emprestimo
+
+Responsabilidades:
+- Conhece os dados do locador.
+- Registra a data de empréstimo e de devolução. 
+- Verifica a disponibilidade do livro para empréstimo. 
+- Armazena os dados do locador juntamente com os dados do título, período máximo pra entrega e etc.  
+- Envia mensagem de tempo restante que o usuário pode ficar com o livro. 
+
+Colaboradores:
+- Usuario
+- Livro
+
+Classe: Multas
+
+Responsabilidades:
+- Conhece o tempo padrão de aluguel de um título. 
+- Registra informações de multas pendentes. 
+- Calcula o valor da multa que o usuário deve pagar decorrente dos dias de atraso. 
+- Notifica o usuário sobre multas em aberto.  
+- Disponibiliza link para pagamento da multa de atraso.  
+
+Colaboradores:
+- Usuario
+- Emprestimo
+
+Classe: CatalogoLivros
+
+Responsabilidades:
+- Conhece todas as obras que a biblioteca possui. 
+- Conhece todos os gêneros literários possíveis. 
+- Armazena as separações dos títulos por gêneros literários. 
+- Possibilita pesquisar o livro por título, gênero, autor ou código. 
+- Possibilita retirar/inserir novos títulos no catálogo.  
+
+Colaboradores:
+- Livro
+- Administrador
